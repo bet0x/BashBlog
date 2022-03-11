@@ -2,8 +2,6 @@
 
 ## Blog Engine in Bash, Why Not?
 
----
-
 ### SUMMARY
 
 The idea here is that you can just upload a markdown file to the `/var/www/public/posts` directory, and every thing else is automatic. The main rules are that the post has to be named `YYYY-MM-DD_Title-of-the-post.md` and the first line in the markdown file needs to be a heading with the title.
