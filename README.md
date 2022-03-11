@@ -23,6 +23,7 @@ You need to enable CGI in your web server. I use nginx with fcgi wrap.
 * Comments
 * Tags and tag navigation
 * Search
+* RSS
 
 ---
 
