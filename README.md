@@ -21,3 +21,5 @@ You need to enable CGI in your web server. I use nginx with fcgi wrap.
 ### LICENSE
 
 This software is licensed under terms of the [Absurd License](https://absurd.wtf/licentiam_absurdum.html).
+
+The `markdown` file in `/usr/bin` is by John Gruber at Daring Fireball and is subject to the terms listed in the bottom of the file.
