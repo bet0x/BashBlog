@@ -65,7 +65,7 @@ fi
 for (( I=0; I<$POSTSPERPAGE; I++)); do
 	POST=${ARR[$I]}
 	FILENAME=$(echo ${POST/^posts\///})
-	printf "<div style='padding-left:2px;border:5px solid #ccc;margin-bottom:6px;background-color:#333;'><p><a href=\"posts.cgi?post=$FILENAME&page=$PAGE\">$(egrep '^# ' $POST | cut -f2- -d' ')</a> &nbsp; &#8674; &nbsp; $(egrep -v "^#" $POST | egrep -v "^$" | head -n1 | cut -c1-255 | markdown) </div>";
+	printf "<div><p><a href=\"posts.cgi?post=$FILENAME&page=$PAGE\">$(egrep '^# ' $POST | cut -f2- -d' ')</a> &nbsp; &#8674; &nbsp; $(egrep -v "^#" $POST | egrep -v "^$" | head -n1 | cut -c1-255 | markdown) </div>";
 done
 
 printf "<br /><p class=\"center blue\">";
