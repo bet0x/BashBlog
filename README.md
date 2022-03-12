@@ -10,7 +10,7 @@ The idea here is that you can just upload a markdown file to the `/var/www/publi
 
 As root, just type `make install` within this archive. There is one configurable option within the make file, and that is the installation prefix. It will default to `/`. There is a `make uninstall` as well if you decide you hate it, and there is a `make reinstall` if you modify something and make the script worse.
 
-I use John Gruber's `markdown` which is written in Perl, and is located in usr/bin directory of this project. You can essentially remove that before typing `make install` and use whatever markdown parser you wish, provided it can be called from the shell and provided it will accept string input.
+I use John Gruber's `markdown` which is written in Perl, and can be installed on Debian/Ubuntu via `apt install markdown`. You can use any markdown parser you want if it accepts string input and outputs strings to stdout. If yours isn't named "markdown" but fits that description, just symlink it into place like `ln -s /usr/bin/whatever /usr/local/bin/markdown`.
 
 ### USAGE
 
@@ -31,4 +31,3 @@ You need to enable CGI in your web server. I use nginx with fcgi wrap.
 
 This software is licensed under terms of the [Absurd License](https://absurd.wtf/licentiam_absurdum.html).
 
-The `markdown` file in `/usr/bin` is by John Gruber at Daring Fireball and is subject to the terms listed in the bottom of the file.
