@@ -1,8 +1,8 @@
 ########################################
 # CONFIGURATION FILE FOR THE BASH BLOG #
 ########################################
-BLOGNAME="Absurd"
-URL="absurd.wtf"
+BLOGNAME="The Bash Blog"
+URL="example.com"
 POSTSPERPAGE="8"
 BLOGDESCRIPTION="This is a blog in Bash CGI."
 BLOGKEYWORDS="bash, cgi, blog"

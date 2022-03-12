@@ -1,2 +1,2 @@
-echo "<p class=\"center\">&copy; MMXXII, example.com</p>"
+echo "<p class=\"center\">&copy; MMXXII, ${URL}</p>"
 echo "</body></html>";
