@@ -18,8 +18,6 @@ You need to enable CGI in your web server. I use nginx with fcgi wrap.
 
 ### STUFF FOR THE FUTURE
 
-* Code clean up
-* Config file
 * Comments
 * Tags and tag navigation
 * Search
