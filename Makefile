@@ -1,19 +1,20 @@
 SHELL := /bin/bash
-PREFIX?=/
-BIN=${PREFIX}usr/bin
-PUB=${PREFIX}var/www/public
+PREFIX?=/var/www
+PUB=$(PREFIX)/public
 
 install:
 	@echo "Installing Bash Blog"
-	install -m 500 ./usr/bin/markdown $(BIN)/
-	install -m 755 ./var/www/public/posts.cgi $(PUB)
-	install -m 755 ./var/www/public/index.cgi $(PUB)
 	mkdir -p $(PUB)/posts
-	install -m 644 ./var/www/public/style.css $(PUB)
+	install -m 750 ./var/www/public/posts.cgi $(PUB)
+	install -m 750 ./var/www/public/index.cgi $(PUB)
+	install -m 640 ./var/www/public/style.css $(PUB)
+	install -m 640 ./var/www/public/config $(PUB)
+	install -m 640 ./var/www/public/footer.include $(PUB)
+	install -m 640 ./var/www/public/header.include $(PUB)
 
 uninstall:
 	@echo "Removing Bash Blog"
-	rm -fv $(BIN)/markdown $(PUB)/{posts.cgi,index.cgi,style.css}
+	rm -fv $(PUB)/{posts.cgi,index.cgi,style.css,config,footer.include,header.include}
 	rmdir -v $(PUB)/posts
 
 reinstall:
