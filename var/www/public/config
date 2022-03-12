@@ -1,0 +1,9 @@
+########################################
+# CONFIGURATION FILE FOR THE BASH BLOG #
+########################################
+BLOGNAME="Absurd"
+URL="absurd.wtf"
+POSTSPERPAGE="8"
+BLOGDESCRIPTION="This is a blog in Bash CGI."
+BLOGKEYWORDS="bash, cgi, blog"
+BLOGAUTHOR="a guy in a room, being"

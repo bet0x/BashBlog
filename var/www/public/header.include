@@ -1,0 +1,11 @@
+echo "<!DOCTYPE html>";
+echo "<html><head>";
+[ -v TITLE ] && echo "<title>${BLOGNAME}: ${TITLE}</title>" || echo "<title>${BLOGNAME}</title>"
+echo "<meta charset=\"utf-8\" />";
+echo "<meta name=\"description\" content=\"${BLOGDESCRIPTION}\" />";
+echo "<meta name=\"keywords\" content=\"${BLOGKEYWORDS}\" />";
+echo "<meta name=\"author\" content=\"${BLOGAUTHOR}\" />";
+echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />";
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
+echo "</head><body>";
+[ -v TITLE ] && echo "<h1>${BLOGNAME}: ${TITLE}</h1>" || echo "<h1>${BLOGNAME}</h1>"

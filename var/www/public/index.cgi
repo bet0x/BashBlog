@@ -12,29 +12,11 @@ do
     ARGUMENTS[${parm[i]}]=${parm[i+1]}
 done
 
-echo "<!DOCTYPE html>";
-echo "<html>";
-echo "";
-echo "  <head>";
-echo "";
-echo "    <title>Bash Blog</title>";
-echo "";
-echo "    <meta charset=\"utf-8\" />";
-echo "    <meta name=\"description\" content=\"This is a blog in Bash CGI.\" />";
-echo "    <meta name=\"keywords\" content=\"bash, cgi, blog\" />";
-echo "    <meta name=\"author\" content=\"A Guy in a Room, Being\" />";
-echo "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />";
-echo "";
-echo "    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />";
-echo "";
-echo "  </head>";
-echo "  <body>";
-echo "		<h1 class=\"blue\">The Bash Blog</h1>";
-echo "		<h2 class=\"red\">something would be here</h2>"
+source config
+source header.include
 
 shopt -s nullglob
 
-POSTSPERPAGE='8'
 ARR=(posts/*)
 TOTALPOSTS="${#ARR[@]}"
 NUMPAGES=$(($TOTALPOSTS/$POSTSPERPAGE))
@@ -65,10 +47,10 @@ fi
 for (( I=0; I<$POSTSPERPAGE; I++)); do
 	POST=${ARR[$I]}
 	FILENAME=$(echo ${POST/^posts\///})
-	printf "<div><p><a href=\"posts.cgi?post=$FILENAME&page=$PAGE\">$(egrep '^# ' $POST | cut -f2- -d' ')</a> &nbsp; &#8674; &nbsp; $(egrep -v "^#" $POST | egrep -v "^$" | head -n1 | cut -c1-255 | markdown) </div>";
+	printf "<div class=\"post\"><p><a href=\"posts.cgi?post=$FILENAME&page=$PAGE\">$(egrep '^# ' $POST | cut -f2- -d' ')</a> &nbsp; &#8674; &nbsp; $(egrep -v "^#" $POST | egrep -v "^$" | head -n1 | cut -c1-255 | markdown) </div>";
 done
 
-printf "<br /><p class=\"center blue\">";
+printf "<br /><p class=\"center\">";
 for (( NUM = 1; NUM <= $NUMPAGES; NUM++ )); do
 	if [ $NUM -lt $NUMPAGES ]; then
 		printf "<a href=\"index.cgi?page=$NUM\"><b>$NUM</b></a> | "
@@ -77,6 +59,4 @@ for (( NUM = 1; NUM <= $NUMPAGES; NUM++ )); do
 	fi
 done
 
-echo "    <p class=\"small red center\">&copy; MMXXII, example.com</p>"
-echo "  </body>";
-echo "</html>";
+source footer.include
